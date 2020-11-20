@@ -1,0 +1,844 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A11376AF8A674A5E96ED465 /* Pods_MoneyManTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D5479C0278FE7B81202580 /* Pods_MoneyManTests.framework */; };
+		2D0B19797B518431D0D7A652 /* Pods_MoneyMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0D5311DCB3E2A6F4513918 /* Pods_MoneyMan.framework */; };
+		760089042567792E0074EE4C /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760089032567792E0074EE4C /* WalletViewController.swift */; };
+		76008906256779440074EE4C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76008905256779440074EE4C /* AccountViewController.swift */; };
+		760FED8C2566286600757FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FED8B2566286600757FA4 /* AppDelegate.swift */; };
+		760FED8E2566286600757FA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FED8D2566286600757FA4 /* SceneDelegate.swift */; };
+		760FED902566286600757FA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FED8F2566286600757FA4 /* LoginViewController.swift */; };
+		760FED932566286600757FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760FED912566286600757FA4 /* Main.storyboard */; };
+		760FED962566286600757FA4 /* MoneyMan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 760FED942566286600757FA4 /* MoneyMan.xcdatamodeld */; };
+		760FED982566286D00757FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760FED972566286D00757FA4 /* Assets.xcassets */; };
+		760FED9B2566286D00757FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760FED992566286D00757FA4 /* LaunchScreen.storyboard */; };
+		760FEDA62566286E00757FA4 /* MoneyManTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDA52566286E00757FA4 /* MoneyManTests.swift */; };
+		760FEDB12566286E00757FA4 /* MoneyManUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDB02566286E00757FA4 /* MoneyManUITests.swift */; };
+		761D466E2566D95100C24BB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761D466D2566D95100C24BB3 /* Constants.swift */; };
+		764EBD022567DD0E00EDA2D6 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */; };
+		767296E325667A5E000BDAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767296E225667A5E000BDAE0 /* GoogleService-Info.plist */; };
+		767296E425667A5E000BDAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767296E225667A5E000BDAE0 /* GoogleService-Info.plist */; };
+		767296E525667A5E000BDAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767296E225667A5E000BDAE0 /* GoogleService-Info.plist */; };
+		767296E825668194000BDAE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E725668194000BDAE0 /* HomeViewController.swift */; };
+		767296EA256688A8000BDAE0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E9256688A8000BDAE0 /* RegisterViewController.swift */; };
+		CFB82F63EFDEAE6AA1EB08C1 /* Pods_MoneyMan_MoneyManUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B28D98CCDCE2C8C46F46741 /* Pods_MoneyMan_MoneyManUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		760FEDA22566286E00757FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 760FED802566286600757FA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 760FED872566286600757FA4;
+			remoteInfo = MoneyMan;
+		};
+		760FEDAD2566286E00757FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 760FED802566286600757FA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 760FED872566286600757FA4;
+			remoteInfo = MoneyMan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023CACC89F5F61447E115430 /* Pods-MoneyManTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManTests.release.xcconfig"; path = "Target Support Files/Pods-MoneyManTests/Pods-MoneyManTests.release.xcconfig"; sourceTree = "<group>"; };
+		38D5479C0278FE7B81202580 /* Pods_MoneyManTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0D5311DCB3E2A6F4513918 /* Pods_MoneyMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59FA92ED915898DCD2DB1BFF /* Pods-MoneyMan-MoneyManUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan-MoneyManUITests.release.xcconfig"; path = "Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests.release.xcconfig"; sourceTree = "<group>"; };
+		760089032567792E0074EE4C /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		76008905256779440074EE4C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		760FED882566286600757FA4 /* MoneyMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		760FED8B2566286600757FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		760FED8D2566286600757FA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		760FED8F2566286600757FA4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		760FED922566286600757FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		760FED952566286600757FA4 /* MoneyMan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyMan.xcdatamodel; sourceTree = "<group>"; };
+		760FED972566286D00757FA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		760FED9A2566286D00757FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		760FED9C2566286D00757FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		760FEDA12566286E00757FA4 /* MoneyManTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyManTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		760FEDA52566286E00757FA4 /* MoneyManTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManTests.swift; sourceTree = "<group>"; };
+		760FEDA72566286E00757FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		760FEDAC2566286E00757FA4 /* MoneyManUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyManUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		760FEDB02566286E00757FA4 /* MoneyManUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManUITests.swift; sourceTree = "<group>"; };
+		760FEDB22566286E00757FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		761D466D2566D95100C24BB3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		767296E225667A5E000BDAE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		767296E725668194000BDAE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		767296E9256688A8000BDAE0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8B28D98CCDCE2C8C46F46741 /* Pods_MoneyMan_MoneyManUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyMan_MoneyManUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1F3B53DB746612A0C6AED8A /* Pods-MoneyMan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan.release.xcconfig"; path = "Target Support Files/Pods-MoneyMan/Pods-MoneyMan.release.xcconfig"; sourceTree = "<group>"; };
+		CAE818D20D4B9427403F5F08 /* Pods-MoneyMan-MoneyManUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan-MoneyManUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D258CBCBF497ED8137F0EE9F /* Pods-MoneyMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan.debug.xcconfig"; path = "Target Support Files/Pods-MoneyMan/Pods-MoneyMan.debug.xcconfig"; sourceTree = "<group>"; };
+		EEF1A18EB249094AD10708CD /* Pods-MoneyManTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManTests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManTests/Pods-MoneyManTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		760FED852566286600757FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D0B19797B518431D0D7A652 /* Pods_MoneyMan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FED9E2566286E00757FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A11376AF8A674A5E96ED465 /* Pods_MoneyManTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FEDA92566286E00757FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFB82F63EFDEAE6AA1EB08C1 /* Pods_MoneyMan_MoneyManUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21CA2C22613743F11A79F113 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F0D5311DCB3E2A6F4513918 /* Pods_MoneyMan.framework */,
+				8B28D98CCDCE2C8C46F46741 /* Pods_MoneyMan_MoneyManUITests.framework */,
+				38D5479C0278FE7B81202580 /* Pods_MoneyManTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B3191466D0EFDDCBD2E94DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D258CBCBF497ED8137F0EE9F /* Pods-MoneyMan.debug.xcconfig */,
+				C1F3B53DB746612A0C6AED8A /* Pods-MoneyMan.release.xcconfig */,
+				CAE818D20D4B9427403F5F08 /* Pods-MoneyMan-MoneyManUITests.debug.xcconfig */,
+				59FA92ED915898DCD2DB1BFF /* Pods-MoneyMan-MoneyManUITests.release.xcconfig */,
+				EEF1A18EB249094AD10708CD /* Pods-MoneyManTests.debug.xcconfig */,
+				023CACC89F5F61447E115430 /* Pods-MoneyManTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		760FED7F2566286600757FA4 = {
+			isa = PBXGroup;
+			children = (
+				760FED8A2566286600757FA4 /* MoneyMan */,
+				760FEDA42566286E00757FA4 /* MoneyManTests */,
+				760FEDAF2566286E00757FA4 /* MoneyManUITests */,
+				760FED892566286600757FA4 /* Products */,
+				2B3191466D0EFDDCBD2E94DB /* Pods */,
+				21CA2C22613743F11A79F113 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		760FED892566286600757FA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				760FED882566286600757FA4 /* MoneyMan.app */,
+				760FEDA12566286E00757FA4 /* MoneyManTests.xctest */,
+				760FEDAC2566286E00757FA4 /* MoneyManUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		760FED8A2566286600757FA4 /* MoneyMan */ = {
+			isa = PBXGroup;
+			children = (
+				761D466B2566D90100C24BB3 /* Helpers */,
+				767296E62566804F000BDAE0 /* VIewControllers */,
+				767296E225667A5E000BDAE0 /* GoogleService-Info.plist */,
+				760FED8B2566286600757FA4 /* AppDelegate.swift */,
+				760FED8D2566286600757FA4 /* SceneDelegate.swift */,
+				760FED912566286600757FA4 /* Main.storyboard */,
+				760FED972566286D00757FA4 /* Assets.xcassets */,
+				760FED992566286D00757FA4 /* LaunchScreen.storyboard */,
+				760FED9C2566286D00757FA4 /* Info.plist */,
+				760FED942566286600757FA4 /* MoneyMan.xcdatamodeld */,
+			);
+			path = MoneyMan;
+			sourceTree = "<group>";
+		};
+		760FEDA42566286E00757FA4 /* MoneyManTests */ = {
+			isa = PBXGroup;
+			children = (
+				760FEDA52566286E00757FA4 /* MoneyManTests.swift */,
+				760FEDA72566286E00757FA4 /* Info.plist */,
+			);
+			path = MoneyManTests;
+			sourceTree = "<group>";
+		};
+		760FEDAF2566286E00757FA4 /* MoneyManUITests */ = {
+			isa = PBXGroup;
+			children = (
+				760FEDB02566286E00757FA4 /* MoneyManUITests.swift */,
+				760FEDB22566286E00757FA4 /* Info.plist */,
+			);
+			path = MoneyManUITests;
+			sourceTree = "<group>";
+		};
+		761D466B2566D90100C24BB3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				761D466D2566D95100C24BB3 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		767296E62566804F000BDAE0 /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				760FED8F2566286600757FA4 /* LoginViewController.swift */,
+				767296E725668194000BDAE0 /* HomeViewController.swift */,
+				767296E9256688A8000BDAE0 /* RegisterViewController.swift */,
+				760089032567792E0074EE4C /* WalletViewController.swift */,
+				76008905256779440074EE4C /* AccountViewController.swift */,
+				764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */,
+			);
+			path = VIewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		760FED872566286600757FA4 /* MoneyMan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 760FEDB52566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyMan" */;
+			buildPhases = (
+				10464C64D7740480D4AE4095 /* [CP] Check Pods Manifest.lock */,
+				760FED842566286600757FA4 /* Sources */,
+				760FED852566286600757FA4 /* Frameworks */,
+				760FED862566286600757FA4 /* Resources */,
+				A8B8AAEBD5B750842D929FB4 /* [CP] Embed Pods Frameworks */,
+				893AE7578CC9CD60B23AB5A4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyMan;
+			productName = MoneyMan;
+			productReference = 760FED882566286600757FA4 /* MoneyMan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		760FEDA02566286E00757FA4 /* MoneyManTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 760FEDB82566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyManTests" */;
+			buildPhases = (
+				42DF5FBBDA39278CA85C8B31 /* [CP] Check Pods Manifest.lock */,
+				760FED9D2566286E00757FA4 /* Sources */,
+				760FED9E2566286E00757FA4 /* Frameworks */,
+				760FED9F2566286E00757FA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				760FEDA32566286E00757FA4 /* PBXTargetDependency */,
+			);
+			name = MoneyManTests;
+			productName = MoneyManTests;
+			productReference = 760FEDA12566286E00757FA4 /* MoneyManTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		760FEDAB2566286E00757FA4 /* MoneyManUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 760FEDBB2566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyManUITests" */;
+			buildPhases = (
+				A5E372052E95E1E361FD79E1 /* [CP] Check Pods Manifest.lock */,
+				760FEDA82566286E00757FA4 /* Sources */,
+				760FEDA92566286E00757FA4 /* Frameworks */,
+				760FEDAA2566286E00757FA4 /* Resources */,
+				9B336D959445A2E1DAF00C02 /* [CP] Embed Pods Frameworks */,
+				B0782EA27B140A71A081FB59 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				760FEDAE2566286E00757FA4 /* PBXTargetDependency */,
+			);
+			name = MoneyManUITests;
+			productName = MoneyManUITests;
+			productReference = 760FEDAC2566286E00757FA4 /* MoneyManUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		760FED802566286600757FA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = KelompokMMS;
+				TargetAttributes = {
+					760FED872566286600757FA4 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					760FEDA02566286E00757FA4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 760FED872566286600757FA4;
+					};
+					760FEDAB2566286E00757FA4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 760FED872566286600757FA4;
+					};
+				};
+			};
+			buildConfigurationList = 760FED832566286600757FA4 /* Build configuration list for PBXProject "MoneyMan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 760FED7F2566286600757FA4;
+			productRefGroup = 760FED892566286600757FA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				760FED872566286600757FA4 /* MoneyMan */,
+				760FEDA02566286E00757FA4 /* MoneyManTests */,
+				760FEDAB2566286E00757FA4 /* MoneyManUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		760FED862566286600757FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760FED9B2566286D00757FA4 /* LaunchScreen.storyboard in Resources */,
+				767296E325667A5E000BDAE0 /* GoogleService-Info.plist in Resources */,
+				760FED982566286D00757FA4 /* Assets.xcassets in Resources */,
+				760FED932566286600757FA4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FED9F2566286E00757FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767296E425667A5E000BDAE0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FEDAA2566286E00757FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767296E525667A5E000BDAE0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10464C64D7740480D4AE4095 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyMan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42DF5FBBDA39278CA85C8B31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyManTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		893AE7578CC9CD60B23AB5A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B336D959445A2E1DAF00C02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5E372052E95E1E361FD79E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyMan-MoneyManUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8B8AAEBD5B750842D929FB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyMan/Pods-MoneyMan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0782EA27B140A71A081FB59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		760FED842566286600757FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760FED902566286600757FA4 /* LoginViewController.swift in Sources */,
+				760FED962566286600757FA4 /* MoneyMan.xcdatamodeld in Sources */,
+				760FED8C2566286600757FA4 /* AppDelegate.swift in Sources */,
+				767296EA256688A8000BDAE0 /* RegisterViewController.swift in Sources */,
+				761D466E2566D95100C24BB3 /* Constants.swift in Sources */,
+				760089042567792E0074EE4C /* WalletViewController.swift in Sources */,
+				760FED8E2566286600757FA4 /* SceneDelegate.swift in Sources */,
+				764EBD022567DD0E00EDA2D6 /* AddTransactionViewController.swift in Sources */,
+				767296E825668194000BDAE0 /* HomeViewController.swift in Sources */,
+				76008906256779440074EE4C /* AccountViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FED9D2566286E00757FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760FEDA62566286E00757FA4 /* MoneyManTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760FEDA82566286E00757FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760FEDB12566286E00757FA4 /* MoneyManUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		760FEDA32566286E00757FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 760FED872566286600757FA4 /* MoneyMan */;
+			targetProxy = 760FEDA22566286E00757FA4 /* PBXContainerItemProxy */;
+		};
+		760FEDAE2566286E00757FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 760FED872566286600757FA4 /* MoneyMan */;
+			targetProxy = 760FEDAD2566286E00757FA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		760FED912566286600757FA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				760FED922566286600757FA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		760FED992566286D00757FA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				760FED9A2566286D00757FA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		760FEDB32566286E00757FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		760FEDB42566286E00757FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		760FEDB62566286E00757FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D258CBCBF497ED8137F0EE9F /* Pods-MoneyMan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyMan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyMan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		760FEDB72566286E00757FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1F3B53DB746612A0C6AED8A /* Pods-MoneyMan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyMan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyMan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		760FEDB92566286E00757FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEF1A18EB249094AD10708CD /* Pods-MoneyManTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyManTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyManTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyMan.app/MoneyMan";
+			};
+			name = Debug;
+		};
+		760FEDBA2566286E00757FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 023CACC89F5F61447E115430 /* Pods-MoneyManTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyManTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyManTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyMan.app/MoneyMan";
+			};
+			name = Release;
+		};
+		760FEDBC2566286E00757FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAE818D20D4B9427403F5F08 /* Pods-MoneyMan-MoneyManUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyManUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyManUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoneyMan;
+			};
+			name = Debug;
+		};
+		760FEDBD2566286E00757FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59FA92ED915898DCD2DB1BFF /* Pods-MoneyMan-MoneyManUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoneyManUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelompokmms.MoneyManUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoneyMan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		760FED832566286600757FA4 /* Build configuration list for PBXProject "MoneyMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760FEDB32566286E00757FA4 /* Debug */,
+				760FEDB42566286E00757FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		760FEDB52566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760FEDB62566286E00757FA4 /* Debug */,
+				760FEDB72566286E00757FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		760FEDB82566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyManTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760FEDB92566286E00757FA4 /* Debug */,
+				760FEDBA2566286E00757FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		760FEDBB2566286E00757FA4 /* Build configuration list for PBXNativeTarget "MoneyManUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				760FEDBC2566286E00757FA4 /* Debug */,
+				760FEDBD2566286E00757FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		760FED942566286600757FA4 /* MoneyMan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				760FED952566286600757FA4 /* MoneyMan.xcdatamodel */,
+			);
+			currentVersion = 760FED952566286600757FA4 /* MoneyMan.xcdatamodel */;
+			path = MoneyMan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 760FED802566286600757FA4 /* Project object */;
+}
