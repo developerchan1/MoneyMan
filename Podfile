@@ -10,6 +10,9 @@ target 'MoneyMan' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Firebase/Firestore'
+  pod 'STTabbar'
+  pod 'iOSDropDown'
+  pod 'SCLAlertView'	
 
   target 'MoneyManTests' do
     inherit! :search_paths

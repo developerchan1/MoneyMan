@@ -14,12 +14,15 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
+    @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        //set button style
+        UIUtil.buttonStyle(btnLogin)
     }
     
     override func viewDidAppear(_ animated: Bool) {

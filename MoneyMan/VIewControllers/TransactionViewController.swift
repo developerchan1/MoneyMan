@@ -1,17 +1,17 @@
 //
-//  MainViewController.swift
+//  TransactionViewController.swift
 //  MoneyMan
 //
-//  Created by Chandra on 19/11/20.
+//  Created by Chandra on 27/11/20.
 //  Copyright © 2020 KelompokMMS. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController, ViewControllerDelegate{
+class TransactionViewController: UIViewController, ViewControllerDelegate, UISearchBarDelegate{
 
-    @IBOutlet weak var txtBalance: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tvTransaction: UITableView!
     
     var delegate : Delegate?
@@ -20,40 +20,24 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+
         dataSource = DataSource()
         delegate = Delegate(self)
-        
+               
+        searchBar.delegate = self
         tvTransaction.delegate = delegate
         tvTransaction.dataSource = dataSource
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         //show loading alert while fetch data from firestore
         self.showLoadingAlert()
-        retrieveBalanceFromFirestore()
         retrieveTransactionDataFromFirestore()
-    }
-    
-    func retrieveBalanceFromFirestore() {
-        let uid = Auth.auth().currentUser!.uid
-        
-        Firestore.firestore().collection("balanceAndDebt").document(uid).getDocument { (document, error) in
-            if error == nil{
-                if document != nil && document!.exists{
-                    if let data = document!.data() {
-                        self.txtBalance.text = "IDR \(data["balance"] as! Int)"
-                    }
-                }
-            }
-        }
     }
     
     func retrieveTransactionDataFromFirestore() {
         let uid = Auth.auth().currentUser!.uid
-        
+           
         Firestore.firestore().collection("transaction").whereField("uid", isEqualTo: uid).getDocuments() { (document, error) in
             if let error = error {
                 print("Error getting documents : \(error)")
@@ -67,7 +51,7 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
                     let price = userTransaction["price"] as? Int ?? 0
                     let method = userTransaction["method"] as? String ?? ""
                     let desc = userTransaction["description"] as? String ?? ""
-                    
+                       
                     let dataArray = Transaction(name: transactionName, date: date, category: category, price: price, method: method, desc: desc)
                     arrTransaction.append(dataArray)
                 }
@@ -79,17 +63,29 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
             self.dismissLoadingAlert()
         }
     }
-    
+       
     func selectedCell(row: Int) {
         selectedTransaction = row
         performSegue(withIdentifier: "transactionDetailSegue", sender: self)
     }
-    
+       
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "transactionDetailSegue" {
             let dest = segue.destination as! TransactionDetailViewController
             dest.transaction = self.dataSource?.arrTransaction[selectedTransaction]
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dataSource?.resetFilteredData()
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        tvTransaction.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        dataSource?.filterTransactionData(searchText)
+        tvTransaction.reloadData()
     }
     
 }

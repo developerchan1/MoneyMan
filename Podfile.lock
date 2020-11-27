@@ -339,6 +339,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - iOSDropDown (0.3.4)
   - leveldb-library (1.22)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
@@ -346,12 +347,17 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
+  - SCLAlertView (0.8)
+  - STTabbar (0.1.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
   - GoogleSignIn
+  - iOSDropDown
+  - SCLAlertView
+  - STTabbar
 
 SPEC REPOS:
   trunk:
@@ -373,9 +379,12 @@ SPEC REPOS:
     - gRPC-Core
     - GTMAppAuth
     - GTMSessionFetcher
+    - iOSDropDown
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SCLAlertView
+    - STTabbar
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -396,10 +405,13 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  STTabbar: fe93da755010233b348b2d0147c43bb1bef290fa
 
-PODFILE CHECKSUM: a3ab97c1814ec666cae3a29f27376ba8de551e6a
+PODFILE CHECKSUM: dff0dffda611c4e15ffff4273c85f0498dc0b44e
 
 COCOAPODS: 1.10.0

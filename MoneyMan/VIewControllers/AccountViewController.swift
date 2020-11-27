@@ -21,7 +21,7 @@ class AccountViewController: UIViewController {
     
     func showLogoutDialog() {
         //show alert before logout
-        let alertController = UIAlertController.init(title: "Logout", message: "Are you sure to lagout from MoneyMan?", preferredStyle: .alert)
+        let alertController = UIAlertController.init(title: "Logout", message: "Are you sure to logout from MoneyMan?", preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
             (action) in

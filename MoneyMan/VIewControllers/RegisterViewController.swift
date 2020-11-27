@@ -15,9 +15,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtConfirmPassword: UITextField!
+    @IBOutlet weak var btnRegister: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set button style
+        UIUtil.buttonStyle(btnRegister)
     }
 
     @IBAction func doRegister(_ sender: Any) {
