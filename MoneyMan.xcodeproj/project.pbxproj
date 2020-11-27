@@ -28,9 +28,9 @@
 		767296E525667A5E000BDAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 767296E225667A5E000BDAE0 /* GoogleService-Info.plist */; };
 		767296E825668194000BDAE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E725668194000BDAE0 /* HomeViewController.swift */; };
 		767296EA256688A8000BDAE0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E9256688A8000BDAE0 /* RegisterViewController.swift */; };
+		768E922B257157CB00A397A0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E922A257157CB00A397A0 /* Transaction.swift */; };
 		7692EE56256FFA3C000D8DDF /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE55256FFA3C000D8DDF /* TransactionTableViewCell.swift */; };
 		7692EE58256FFAB1000D8DDF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE57256FFAB1000D8DDF /* DataSource.swift */; };
-		7692EE5B256FFB3C000D8DDF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE5A256FFB3C000D8DDF /* Transaction.swift */; };
 		7692EE5D256FFC00000D8DDF /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE5C256FFC00000D8DDF /* Delegate.swift */; };
 		7692EE5F256FFEB2000D8DDF /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE5E256FFEB2000D8DDF /* ViewControllerDelegate.swift */; };
 		769A9A09256CD8EB00F6C11F /* CustomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A9A08256CD8EB00F6C11F /* CustomTabViewController.swift */; };
@@ -85,9 +85,9 @@
 		767296E225667A5E000BDAE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		767296E725668194000BDAE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		767296E9256688A8000BDAE0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		768E922A257157CB00A397A0 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		7692EE55256FFA3C000D8DDF /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = "../../../../../Downloads/MoneyMan-master/MoneyMan/TableViewCell/TransactionTableViewCell.swift"; sourceTree = "<group>"; };
 		7692EE57256FFAB1000D8DDF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		7692EE5A256FFB3C000D8DDF /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = "../../../../../Downloads/MoneyMan-master/MoneyMan/Transaction.swift"; sourceTree = "<group>"; };
 		7692EE5C256FFC00000D8DDF /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		7692EE5E256FFEB2000D8DDF /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
 		769A9A08256CD8EB00F6C11F /* CustomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		7692EE59256FFB2C000D8DDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7692EE5A256FFB3C000D8DDF /* Transaction.swift */,
+				768E922A257157CB00A397A0 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,7 +536,6 @@
 			files = (
 				760FED902566286600757FA4 /* LoginViewController.swift in Sources */,
 				760FED962566286600757FA4 /* MoneyMan.xcdatamodeld in Sources */,
-				7692EE5B256FFB3C000D8DDF /* Transaction.swift in Sources */,
 				760FED8C2566286600757FA4 /* AppDelegate.swift in Sources */,
 				76EC8C1B2570272500C95113 /* TransactionDetailViewController.swift in Sources */,
 				7692EE58256FFAB1000D8DDF /* DataSource.swift in Sources */,
@@ -549,6 +548,7 @@
 				7692EE56256FFA3C000D8DDF /* TransactionTableViewCell.swift in Sources */,
 				769A9A09256CD8EB00F6C11F /* CustomTabViewController.swift in Sources */,
 				764EBD022567DD0E00EDA2D6 /* AddTransactionViewController.swift in Sources */,
+				768E922B257157CB00A397A0 /* Transaction.swift in Sources */,
 				7623CB232570BE3700E2C7D3 /* TransactionViewController.swift in Sources */,
 				767296E825668194000BDAE0 /* HomeViewController.swift in Sources */,
 				76FA9E72256E59A000EA88C5 /* UIUtil.swift in Sources */,
