@@ -20,6 +20,7 @@ class DataSource: NSObject,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TransactionTableViewCell
+        
         let trx = filteredData[indexPath.row]
         
         cell.transactionName.text = trx.name

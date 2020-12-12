@@ -11,8 +11,17 @@ import Firebase
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var accountName: UILabel!
+    @IBOutlet weak var accountEmail: UILabel!
+    @IBOutlet weak var accountPicture: UIImageView!
+    @IBOutlet weak var accountTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        accountPicture.layer.cornerRadius = 60
+        accountPicture.layer.masksToBounds = true
+        
+        
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
@@ -36,7 +45,6 @@ class AccountViewController: UIViewController {
         alertController.addAction(noAction)
         
         present(alertController, animated: true, completion: nil)
-
     }
     
     func logout(){
