@@ -49,14 +49,14 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
         }
         
         if !(!email.hasPrefix("@") && email.contains("@") && !email.contains("@.") && !email.hasSuffix(".")) {
-               showErrorDialog("Error Message","Invalid email format")
-               return false
+            showErrorDialog("Error Message","Invalid email format")
+            return false
         }
            
-       if password.count < 6 {
-           showErrorDialog("Error Message","Password must be at least 6 characters")
-           return false
-       }
+        if password.count < 6 {
+            showErrorDialog("Error Message","Password must be at least 6 characters")
+            return false
+        }
         
         return true
     }

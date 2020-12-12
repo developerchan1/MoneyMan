@@ -44,11 +44,37 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
             if error == nil{
                 if document != nil && document!.exists{
                     if let data = document!.data() {
-                        self.txtBalance.text = "IDR \(data["balance"] as! Int)"
+                        self.txtBalance.text = self.printBalance(data["balance"] as! Int)
                     }
                 }
             }
         }
+    }
+    
+    func printBalance(_ inputBalance: Int) -> String{
+        var balance = inputBalance
+        // default return value
+        if balance == 0 {
+            return "IDR 0"
+        }
+        
+        var outputBalance = ""
+        let multiplier = 1000
+        while balance > 0 {
+            var num = String(balance%multiplier)
+            // print '0's
+            while num.count < 3 && balance/multiplier > 0 {
+                num = "0" + num
+            }
+            // print '.' separator
+            if outputBalance.count > 0{
+                outputBalance = "." + outputBalance
+            }
+            outputBalance = num + outputBalance
+            balance /= multiplier
+        }
+        
+        return "IDR " + outputBalance
     }
     
     func retrieveTransactionDataFromFirestore() {
