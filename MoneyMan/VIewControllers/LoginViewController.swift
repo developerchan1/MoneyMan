@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
             showErrorDialog("Error Message","Invalid email format")
             return false
         }
-           
+        
         if password.count < 6 {
             showErrorDialog("Error Message","Password must be at least 6 characters")
             return false
@@ -76,24 +76,24 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-          //sign in with google sign in
-          if let error = error {
-              print(error.localizedDescription)
-              return
-          }
-          
-          if let auth = user.authentication {
-              let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-              
-              Auth.auth().signIn(with: credentials) {
-                  (authResult, error) in
-                
-                  if let error = error {
-                      print(error.localizedDescription)
-                      return
-                  }
-                
-                  self.isUserLoggedIn()
+        //sign in with google sign in
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+
+        if let auth = user.authentication {
+            let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+
+            Auth.auth().signIn(with: credentials) {
+                (authResult, error) in
+
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+
+                self.isUserLoggedIn()
             }
         }
     }

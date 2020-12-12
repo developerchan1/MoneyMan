@@ -20,14 +20,14 @@ class DataSource: NSObject,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell") as! TransactionTableViewCell
-        
+
         let trx = filteredData[indexPath.row]
-        
+
         cell.transactionName.text = trx.name
         cell.transactionDate.text = trx.date
         cell.transactionPrice.text = printBalance(trx.price)
         cell.transactionCategory.image = UIImage(named: trx.category)
-        
+
         return cell
     }
     
