@@ -53,8 +53,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
             return false
         }
         
-        if password.count < 6 {
-            showErrorDialog("Error Message","Password must be at least 6 characters")
+        if password.count < 8 {
+            showErrorDialog("Error Message","Password must be at least 8 characters")
             return false
         }
         
