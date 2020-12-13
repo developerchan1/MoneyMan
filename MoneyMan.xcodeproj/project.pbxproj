@@ -34,6 +34,8 @@
 		76EC8C1B2570272500C95113 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC8C1A2570272500C95113 /* TransactionDetailViewController.swift */; };
 		76FA9E72256E59A000EA88C5 /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA9E71256E59A000EA88C5 /* UIUtil.swift */; };
 		CFB82F63EFDEAE6AA1EB08C1 /* Pods_MoneyMan_MoneyManUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B28D98CCDCE2C8C46F46741 /* Pods_MoneyMan_MoneyManUITests.framework */; };
+		F2444D06258688C0005AAA21 /* AccountOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2444D05258688C0005AAA21 /* AccountOptionTableViewCell.swift */; };
+		F25D79A02584D59D0024F557 /* AccountOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D799F2584D59D0024F557 /* AccountOption.swift */; };
 		F28712A42582268700E095C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F28712A32582268700E095C2 /* GoogleService-Info.plist */; };
 		F28BDD61258389A100C83EBA /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28BDD60258389A100C83EBA /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		CAE818D20D4B9427403F5F08 /* Pods-MoneyMan-MoneyManUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan-MoneyManUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyMan-MoneyManUITests/Pods-MoneyMan-MoneyManUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D258CBCBF497ED8137F0EE9F /* Pods-MoneyMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyMan.debug.xcconfig"; path = "Target Support Files/Pods-MoneyMan/Pods-MoneyMan.debug.xcconfig"; sourceTree = "<group>"; };
 		EEF1A18EB249094AD10708CD /* Pods-MoneyManTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManTests.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManTests/Pods-MoneyManTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2444D05258688C0005AAA21 /* AccountOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOptionTableViewCell.swift; sourceTree = "<group>"; };
+		F25D799F2584D59D0024F557 /* AccountOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOption.swift; sourceTree = "<group>"; };
 		F28712A32582268700E095C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F28BDD60258389A100C83EBA /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,11 +183,11 @@
 				7692EE52256FF98F000D8DDF /* TableView */,
 				767296E62566804F000BDAE0 /* VIewControllers */,
 				761D466B2566D90100C24BB3 /* Helpers */,
+				760FED912566286600757FA4 /* Main.storyboard */,
 				F28712A32582268700E095C2 /* GoogleService-Info.plist */,
 				760FED8B2566286600757FA4 /* AppDelegate.swift */,
 				760FED8D2566286600757FA4 /* SceneDelegate.swift */,
 				764A27D8256E323F00B5B0E6 /* LaunchScreen.storyboard */,
-				760FED912566286600757FA4 /* Main.storyboard */,
 				760FED972566286D00757FA4 /* Assets.xcassets */,
 				760FED9C2566286D00757FA4 /* Info.plist */,
 				760FED942566286600757FA4 /* MoneyMan.xcdatamodeld */,
@@ -242,6 +246,7 @@
 				7692EE5C256FFC00000D8DDF /* Delegate.swift */,
 				7692EE5E256FFEB2000D8DDF /* ViewControllerDelegate.swift */,
 				F28BDD60258389A100C83EBA /* TransactionTableViewCell.swift */,
+				F2444D05258688C0005AAA21 /* AccountOptionTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				768E922A257157CB00A397A0 /* Transaction.swift */,
+				F25D799F2584D59D0024F557 /* AccountOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -547,6 +553,8 @@
 				768E922B257157CB00A397A0 /* Transaction.swift in Sources */,
 				7623CB232570BE3700E2C7D3 /* TransactionViewController.swift in Sources */,
 				767296E825668194000BDAE0 /* HomeViewController.swift in Sources */,
+				F25D79A02584D59D0024F557 /* AccountOption.swift in Sources */,
+				F2444D06258688C0005AAA21 /* AccountOptionTableViewCell.swift in Sources */,
 				76FA9E72256E59A000EA88C5 /* UIUtil.swift in Sources */,
 				76008906256779440074EE4C /* AccountViewController.swift in Sources */,
 				7692EE5F256FFEB2000D8DDF /* ViewControllerDelegate.swift in Sources */,
