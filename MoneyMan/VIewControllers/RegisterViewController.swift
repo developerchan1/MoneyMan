@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController {
     }
     
     func inputValid(_ username : String, _ email : String, _ password : String, _ confirmPassword : String) -> Bool{
-            
+        
         if email == ""  {
             showErrorDialog("Error Message","Email must be filled")
             return false

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>240688367745-ldotvoumk0bj3usl4delt7g2ahgpmmsl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.240688367745-ldotvoumk0bj3usl4delt7g2ahgpmmsl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAWYQW46kCIQMCtUDKh4ULegjsWDLxbtzc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>240688367745</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kelompokmms.MoneyMan</string>
+	<key>PROJECT_ID</key>
+	<string>moneyman-bd7cd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>moneyman-bd7cd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:240688367745:ios:570520760c0888eb736580</string>
+	<key>DATABASE_URL</key>
+	<string>https://moneyman-bd7cd.firebaseio.com</string>
+</dict>
+</plist>
