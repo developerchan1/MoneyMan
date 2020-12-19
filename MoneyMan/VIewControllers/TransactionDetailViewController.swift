@@ -31,7 +31,6 @@ class TransactionDetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let data = transaction {
-            txtPrice.text = printBalance(data.price)
             txtName.text = data.name
             txtDate.text = data.date
             txtMethod.text = data.method
@@ -47,34 +46,10 @@ class TransactionDetailViewController: UIViewController {
             //set corner radius and give shadow to the cards
             UIUtil.roundedCornerCardStyle(transactionInfoCard)
             UIUtil.roundedCornerCardStyle(transactionDescCard)
+            Tools.priceTextFormat(txtPrice,transaction!)
         }
     }
-    
-    func printBalance(_ inputBalance: Int) -> String{
-        var balance = inputBalance
-        // default return value
-        if balance == 0 {
-            return "IDR 0"
-        }
-        
-        var outputBalance = ""
-        let multiplier = 1000
-        while balance > 0 {
-            var num = String(balance%multiplier)
-            // print '0's
-            while num.count < 3 && balance/multiplier > 0 {
-                num = "0" + num
-            }
-            // print '.' separator
-            if outputBalance.count > 0{
-                outputBalance = "." + outputBalance
-            }
-            outputBalance = num + outputBalance
-            balance /= multiplier
-        }
-        
-        return "IDR " + outputBalance
-    }
+
     
     func setBackgroundColor(_ category : String) -> UIColor{
         if category == "Income" {

@@ -10,7 +10,6 @@ import UIKit
 import iOSDropDown
 import FirebaseFirestore
 import Firebase
-import SCLAlertView
 
 class AddTransactionViewController: UIViewController {
 
@@ -25,7 +24,6 @@ class AddTransactionViewController: UIViewController {
     var transactionMethod:String? = nil
     var todaysDate:String? = nil
     
-    let date = Date()
     let dateFormatter = DateFormatter()
     let db = Firestore.firestore()
     let user_uid:String = Auth.auth().currentUser!.uid
@@ -47,10 +45,6 @@ class AddTransactionViewController: UIViewController {
         //get selected item name from dropdown
         categoryDrop.didSelect(completion: {(selectedText , index ,id) in self.transactionCategory = selectedText});
         methodDrop.didSelect(completion: {(selectedText, index, id) in self.transactionMethod = selectedText});
-        
-        //date
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        todaysDate =  dateFormatter.string(from: date)
         
         //set text view style
         UIUtil.textViewStyle(txtDesc)
@@ -88,6 +82,11 @@ class AddTransactionViewController: UIViewController {
             return false
         }
         
+        if Int(txtPrice.text!)! < 500 ||  Int(txtPrice.text!)! > 1000000000{
+            showErrorDialog("Error Message","Price must be between IDR 500 and IDR 1.000.000.000")
+            return false
+        }
+        
         if txtDesc.text.count < 8 {
             showErrorDialog("Error Message","Description must be at least 8 characters")
             return false
@@ -97,16 +96,17 @@ class AddTransactionViewController: UIViewController {
     }
     
     func addTransactionToFirestore(){
+        showLoadingAlert()
         db.collection("transaction").addDocument(data: [
         "uid" : user_uid,
-        "date" : todaysDate!,
+        "date" : Timestamp(date: Date()),
         "name" : transactionName.text!,
         "category" : transactionCategory!,
         "method" : transactionMethod!,
         "price" : Int(txtPrice.text!)!,
         "description" : txtDesc.text!]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
+            if err != nil {
+                self.showErrorDialog("Show Error Message", "Failed to add transaction")
             } else {
                 self.changeBalanceAndDebtInFirestore()
             }
@@ -136,38 +136,17 @@ class AddTransactionViewController: UIViewController {
                 "debt" : FieldValue.increment(-Int64(txtPrice.text!)!)
             ])
         }
-        showSuccessDialog()
-    }
-    
-    func showErrorDialog(_ title : String, _ msg : String){
-        let alertController = UIAlertController.init(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func showSuccessDialog(){
-        let appearance = SCLAlertView.SCLAppearance(
-            kTitleTop: CGFloat(50),
-            kTitleFont: UIFont(name: "HelveticaNeue-Bold", size: 24)!,
-            kTextFont: UIFont(name: "HelveticaNeue-Light", size: 15)!,
-            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
-            showCloseButton: false,
-            contentViewCornerRadius: CGFloat(20),
-            buttonCornerRadius: CGFloat(8)
-        )
-        
-        let alert = SCLAlertView(appearance: appearance)
-        
-        alert.addButton("Add Another Transaction") {
-            self.clearAllField()
-        }
-
-        alert.addButton("Back to Main") {
-            self.performSegue(withIdentifier: "tabControllerSegue", sender: self)
-        }
-        
-        alert.showSuccess("Success", subTitle: "This transaction have been added to the transaction list.")
+        dismissLoadingAlert()
+        showSuccessDialog("Success",
+                          "This transaction have been added to the transaction list.",
+                          [
+                                "Add Another Transaction" : {
+                                    self.clearAllField()
+                                },
+                                "Back to Main" : {
+                                    self.performSegue(withIdentifier: "tabControllerSegue", sender: self)
+                                }
+                          ])
     }
     
     func clearAllField(){

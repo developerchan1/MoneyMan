@@ -38,8 +38,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
         }
     }
     
-    @IBAction func googleSignInTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
+    @IBAction func googleSignInButtonPressed(_ sender: Any) {
+          GIDSignIn.sharedInstance().signIn()
     }
     
     func inputValid(_ email : String, _ password : String) -> Bool{
@@ -62,12 +62,14 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
     }
     
     func signIn(_ email : String, _ password : String){
+        showLoadingAlert()
         //sign in with email and password
         Auth.auth().signIn(withEmail: email, password: password){
             (authResult, error) in
             
             if let error = error {
-                print(error.localizedDescription)
+                self.dismissLoadingAlert()
+                self.showErrorDialog("Error Message","\(error.localizedDescription)")
                 return
             }
             
@@ -78,18 +80,20 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         //sign in with google sign in
         if let error = error {
-            print(error.localizedDescription)
+            print("\(error.localizedDescription)")
             return
         }
-
+        
         if let auth = user.authentication {
+            showLoadingAlert()
             let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
 
             Auth.auth().signIn(with: credentials) {
                 (authResult, error) in
 
                 if let error = error {
-                    print(error.localizedDescription)
+                    self.dismissLoadingAlert()
+                    self.showErrorDialog("Error Message","\(error.localizedDescription)")
                     return
                 }
 
@@ -109,17 +113,12 @@ class LoginViewController: UIViewController, GIDSignInDelegate{
                 }
             }
             
+            dismissLoadingAlert()
+            
             let tabBarController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as! UITabBarController
             view.window?.rootViewController = tabBarController
             view.window?.makeKeyAndVisible()
         }
-    }
-    
-    func showErrorDialog(_ title : String, _ msg : String){
-        let alertController = UIAlertController.init(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {

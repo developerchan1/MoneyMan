@@ -17,22 +17,26 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
     var delegate : Delegate?
     var dataSource : DataSource?
     var selectedTransaction = -1
+    var db : Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        dataSource = DataSource()
+        dataSource = DataSource(self)
         delegate = Delegate(self)
         
         tvTransaction.delegate = delegate
         tvTransaction.dataSource = dataSource
+        db = Firestore.firestore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        //show loading alert while fetch data from firestore
         self.showLoadingAlert()
+        getBalanceAndTransaction()
+    }
+    
+    func getBalanceAndTransaction(){
         retrieveBalanceFromFirestore()
         retrieveTransactionDataFromFirestore()
     }
@@ -40,61 +44,41 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
     func retrieveBalanceFromFirestore() {
         let uid = Auth.auth().currentUser!.uid
         
-        Firestore.firestore().collection("balanceAndDebt").document(uid).getDocument { (document, error) in
+        db.collection("balanceAndDebt")
+            .document(uid)
+            .getDocument { (document, error) in
             if error == nil{
                 if document != nil && document!.exists{
                     if let data = document!.data() {
-                        self.txtBalance.text = self.printBalance(data["balance"] as! Int)
+                        self.txtBalance.text = Tools.printBalance(data["balance"] as! Int)
                     }
                 }
             }
         }
     }
     
-    func printBalance(_ inputBalance: Int) -> String{
-        var balance = inputBalance
-        // default return value
-        if balance == 0 {
-            return "IDR 0"
-        }
-        
-        var outputBalance = ""
-        let multiplier = 1000
-        while balance > 0 {
-            var num = String(balance%multiplier)
-            // print '0's
-            while num.count < 3 && balance/multiplier > 0 {
-                num = "0" + num
-            }
-            // print '.' separator
-            if outputBalance.count > 0{
-                outputBalance = "." + outputBalance
-            }
-            outputBalance = num + outputBalance
-            balance /= multiplier
-        }
-        
-        return "IDR " + outputBalance
-    }
-    
     func retrieveTransactionDataFromFirestore() {
         let uid = Auth.auth().currentUser!.uid
         
-        Firestore.firestore().collection("transaction").whereField("uid", isEqualTo: uid).getDocuments() { (document, error) in
+        db.collection("transaction")
+            .whereField("uid", isEqualTo: uid)
+            .order(by: "date", descending: true)
+            .getDocuments() { (document, error) in
             if let error = error {
                 print("Error getting documents : \(error)")
             } else {
                 var arrTransaction = [Transaction]()
                 for data in document!.documents {
                     let userTransaction = data.data()
+                    let id = data.documentID
                     let transactionName = userTransaction["name"] as? String ?? ""
                     let category = userTransaction["category"] as? String ?? ""
-                    let date = userTransaction["date"] as? String ?? ""
+                    let date = Tools.dateFormat((userTransaction["date"] as! Timestamp).dateValue())
                     let price = userTransaction["price"] as? Int ?? 0
                     let method = userTransaction["method"] as? String ?? ""
                     let desc = userTransaction["description"] as? String ?? ""
                     
-                    let dataArray = Transaction(name: transactionName, date: date, category: category, price: price, method: method, desc: desc)
+                    let dataArray = Transaction(id: id,name: transactionName, date: date, category: category, price: price, method: method, desc: desc)
                     arrTransaction.append(dataArray)
                 }
                 self.dataSource?.arrTransaction = arrTransaction
@@ -107,8 +91,59 @@ class HomeViewController: UIViewController, ViewControllerDelegate{
     }
     
     func selectedCell(row: Int) {
+        //show transaction detail
         selectedTransaction = row
         performSegue(withIdentifier: "transactionDetailSegue", sender: self)
+    }
+    
+    func deleteCell(row: Int) {
+        //show confirmation dialog before delete
+        showConfirmationDialog("Delete Transaction Confirmation", "Do you really want to delete this transaction", {
+            
+            let transaction = (self.dataSource?.arrTransaction[row])!
+            self.showLoadingAlert()
+            
+            //delete transaction
+            self.db.collection("transaction")
+                .document(transaction.id)
+                .delete() { err in
+                if let err = err {
+                    self.showErrorDialog("Error Message", "\(err.localizedDescription)")
+                } else {
+                    //update balance and debt amount
+                    self.changeBalanceAndDebtInFirestore(transaction.category, transaction.price)
+                }
+            }
+        })
+    }
+    
+    func changeBalanceAndDebtInFirestore(_ transactionCategory : String, _ price : Int){
+        let user_uid = (Auth.auth().currentUser?.uid)!
+        
+        if transactionCategory == "Income" {
+            db.collection("balanceAndDebt").document(user_uid).updateData([
+                "balance" : FieldValue.increment(Int64(price * -1))
+            ])
+        }
+        else if transactionCategory == "Expense" {
+            db.collection("balanceAndDebt").document(user_uid).updateData([
+                "balance" : FieldValue.increment(Int64(price))
+            ])
+        }
+        else if transactionCategory == "Debt" {
+            db.collection("balanceAndDebt").document(user_uid).updateData([
+                "balance" : FieldValue.increment(Int64(price * -1)),
+                "debt" : FieldValue.increment(Int64(price * -1))
+            ])
+        }
+        else if transactionCategory == "Paid Debt" {
+            db.collection("balanceAndDebt").document(user_uid).updateData([
+                "balance" : FieldValue.increment(Int64(price)),
+                "debt" : FieldValue.increment(Int64(price))
+            ])
+        }
+        
+        getBalanceAndTransaction()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
