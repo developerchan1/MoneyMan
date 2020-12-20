@@ -9,6 +9,7 @@
 import Foundation
 
 struct Transaction {
+    var id:String
     var name:String
     var date:String
     var category:String

@@ -14,8 +14,24 @@ class DataSource: NSObject,UITableViewDataSource {
     //save filtered transaction data
     var filteredData = [Transaction]()
     
+    weak var delegate : ViewControllerDelegate?
+
+    init(_ delegate : ViewControllerDelegate) {
+        self.delegate = delegate
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delegate?.deleteCell(row: indexPath.row)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,36 +41,10 @@ class DataSource: NSObject,UITableViewDataSource {
 
         cell.transactionName.text = trx.name
         cell.transactionDate.text = trx.date
-        cell.transactionPrice.text = printBalance(trx.price)
+        Tools.priceTextFormat(cell.transactionPrice,trx)
         cell.transactionCategory.image = UIImage(named: trx.category)
-
+        
         return cell
-    }
-    
-    func printBalance(_ inputBalance: Int) -> String{
-        var balance = inputBalance
-        // default return value
-        if balance == 0 {
-            return "IDR 0"
-        }
-        
-        var outputBalance = ""
-        let multiplier = 1000
-        while balance > 0 {
-            var num = String(balance%multiplier)
-            // print '0's
-            while num.count < 3 && balance/multiplier > 0 {
-                num = "0" + num
-            }
-            // print '.' separator
-            if outputBalance.count > 0{
-                outputBalance = "." + outputBalance
-            }
-            outputBalance = num + outputBalance
-            balance /= multiplier
-        }
-        
-        return "IDR " + outputBalance
     }
     
     func filterTransactionData(_ keyword : String){

@@ -11,27 +11,67 @@ import Firebase
 
 class AccountViewController: UIViewController {
 
-    @IBOutlet weak var accountName: UILabel!
+    @IBOutlet weak var accountUsername: UILabel!
     @IBOutlet weak var accountEmail: UILabel!
     @IBOutlet weak var accountPicture: UIImageView!
     @IBOutlet weak var accountTableView: UITableView!
+    @IBOutlet weak var accountCard: UIView!
     
     var options: [AccountOption] = []
+    var imageUrl : URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        options.append(AccountOption("Edit Profile",""))
-        options.append(AccountOption("Edit Password",""))
-        options.append(AccountOption("Help",""))
-        options.append(AccountOption("About",""))
+        options.append(AccountOption("Edit Profile","Edit Profile"))
+        options.append(AccountOption("Help","Help"))
+        options.append(AccountOption("About","About"))
+        options.append(AccountOption("Logout","Logout"))
         
-        accountPicture.layer.cornerRadius = 60
-        accountPicture.layer.masksToBounds = true
         
-        accountName.text = Auth.auth().currentUser?.displayName ?? "Name not set"
-        accountEmail.text = Auth.auth().currentUser?.email ?? "Email not set"
-        
+        UIUtil.circleImage(accountPicture)
         configureTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        imageUrl = Auth.auth().currentUser!.photoURL
+             
+        accountUsername.text = Auth.auth().currentUser?.displayName ?? "Name not set"
+        accountEmail.text = Auth.auth().currentUser?.email ?? "Email not set"
+        accountPicture.load(url: imageUrl)
+        
+        configureAccountCard()
+   }
+
+    func configureAccountCard(){
+        //set corner radius and give gradient to the card
+        UIUtil.roundedCornerCardStyle(accountCard)
+        accountCard.layer.insertSublayer(gradientLayer(), at : 0)
+    }
+    
+    func gradientLayer () -> CAGradientLayer{
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = accountCard.bounds
+        gradientLayer.contentsCenter = CGRect(x: 0, y: 0, width: 1, height: 1)
+        gradientLayer.colors = [UIColor.debtGradient1.cgColor,
+                                UIColor.balanceGradient1.cgColor]
+        gradientLayer.locations = [0.0, 0.6]
+        gradientLayer.cornerRadius = 20.0
+        gradientLayer.add(gradientAnimation(), forKey: nil)
+        
+        
+        return gradientLayer
+    }
+    
+    func gradientAnimation() -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "locations")
+        animation.fromValue = [0,1]
+        animation.toValue = [-0.5,0.5]
+        animation.duration = 5
+        animation.autoreverses = true
+        animation.repeatCount = MAXFLOAT
+        animation.isRemovedOnCompletion = false
+        
+        return animation
     }
     
     // TableView Configurations
@@ -40,35 +80,12 @@ class AccountViewController: UIViewController {
         accountTableView.dataSource = self
     }
     
-    @IBAction func logoutTapped(_ sender: Any) {
-        showLogoutDialog()
-    }
-    
-    func showLogoutDialog() {
-        //show alert before logout
-        let alertController = UIAlertController.init(title: "Logout", message: "Are you sure to logout from MoneyMan?", preferredStyle: .alert)
-        
-        let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
-            (action) in
-            //logout the user
-            self.logout()
-            
-        }
-        
-        let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
-        
-        alertController.addAction(yesAction)
-        alertController.addAction(noAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
     func logout(){
         do {
             try Auth.auth().signOut()
             goToLoginVC()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+            showErrorDialog("Error Message", "\(signOutError.localizedDescription)")
         }
     }
     
@@ -104,6 +121,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
     }
@@ -117,6 +139,11 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     
     // Select Cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "editProfileSegue", sender: self)
+        }
+        else if indexPath.row == 3 {
+            showConfirmationDialog("Logout Confirmation","Are you sure to logout from MoneyMan?",{self.logout()})
+        }
     }
 }

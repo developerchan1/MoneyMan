@@ -12,7 +12,8 @@ target 'MoneyMan' do
   pod 'Firebase/Firestore'
   pod 'STTabbar'
   pod 'iOSDropDown'
-  pod 'SCLAlertView'	
+  pod 'SCLAlertView'
+  pod 'M13Checkbox'	
 
   target 'MoneyManTests' do
     inherit! :search_paths

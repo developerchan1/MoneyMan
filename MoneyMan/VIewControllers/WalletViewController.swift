@@ -41,41 +41,15 @@ class WalletViewController: UIViewController {
                     if let data = document!.data() {
                         // print balance ke string
                         
-                        self.txtBalance.text = self.printBalance(data["balance"] as! Int)
+                        self.txtBalance.text = Tools.printBalance(data["balance"] as! Int)
                         
-                        self.txtDebt.text = self.printBalance(data["debt"] as! Int)
+                        self.txtDebt.text = Tools.printBalance(data["debt"] as! Int)
                     }
                 }
             }
             //hide loading alert while data fetched from firestore
             self.dismissLoadingAlert()
         }
-    }
-    
-    func printBalance(_ inputBalance: Int) -> String{
-        var balance = inputBalance
-        // default return value
-        if balance == 0 {
-            return "IDR 0"
-        }
-        
-        var outputBalance = ""
-        let multiplier = 1000
-        while balance > 0 {
-            var num = String(balance%multiplier)
-            // print '0's
-            while num.count < 3 && balance/multiplier > 0 {
-                num = "0" + num
-            }
-            // print '.' separator
-            if outputBalance.count > 0{
-                outputBalance = "." + outputBalance
-            }
-            outputBalance = num + outputBalance
-            balance /= multiplier
-        }
-        
-        return "IDR " + outputBalance
     }
     
     func addGradientToView(forBalance : Bool){

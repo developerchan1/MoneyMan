@@ -36,16 +36,25 @@ class RegisterViewController: UIViewController {
     }
     
     func register(_ username : String, _ email : String, _ password : String) {
+        showLoadingAlert()
         Auth.auth().createUser(withEmail: email, password: password){
             (authResult, error) in
             
             if let error = error {
-                print("Error : \(error.localizedDescription)")
+                self.dismissLoadingAlert()
+                self.showErrorDialog("Error Message","\(error.localizedDescription)")
                 return
             }
             
-            //add username to firestore
-            Firestore.firestore().collection("user").document((authResult?.user.uid)!).setData(["username":username])
+            self.setUsernameToFirebase(username)
+        }
+    }
+    
+    func setUsernameToFirebase (_ username : String){
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = username
+        changeRequest?.commitChanges { (error) in
+            self.dismissLoadingAlert()
             //show main page
             let tabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as! UITabBarController
             self.view.window?.rootViewController = tabBarController
@@ -54,6 +63,11 @@ class RegisterViewController: UIViewController {
     }
     
     func inputValid(_ username : String, _ email : String, _ password : String, _ confirmPassword : String) -> Bool{
+        
+        if username.count < 6 {
+            showErrorDialog("Error Message","Username must be at least 6 character")
+            return false
+        }
         
         if email == ""  {
             showErrorDialog("Error Message","Email must be filled")
@@ -77,12 +91,4 @@ class RegisterViewController: UIViewController {
         
         return true
     }
-        
-    func showErrorDialog(_ title : String, _ msg : String){
-        let alertController = UIAlertController.init(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
-    }
-
 }

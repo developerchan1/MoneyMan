@@ -21,14 +21,17 @@
 		760FEDB12566286E00757FA4 /* MoneyManUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDB02566286E00757FA4 /* MoneyManUITests.swift */; };
 		761D466E2566D95100C24BB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761D466D2566D95100C24BB3 /* Constants.swift */; };
 		7623CB232570BE3700E2C7D3 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623CB222570BE3700E2C7D3 /* TransactionViewController.swift */; };
+		762D70E9258B83EC00222B00 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D70E8258B83EC00222B00 /* EditProfileViewController.swift */; };
 		764A27DA256E323F00B5B0E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764A27D8256E323F00B5B0E6 /* LaunchScreen.storyboard */; };
 		764EBD022567DD0E00EDA2D6 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */; };
+		765259C9258BD1AA001CEC51 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765259C8258BD1AA001CEC51 /* Tools.swift */; };
 		767296E825668194000BDAE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E725668194000BDAE0 /* HomeViewController.swift */; };
 		767296EA256688A8000BDAE0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767296E9256688A8000BDAE0 /* RegisterViewController.swift */; };
 		768E922B257157CB00A397A0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E922A257157CB00A397A0 /* Transaction.swift */; };
 		7692EE58256FFAB1000D8DDF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE57256FFAB1000D8DDF /* DataSource.swift */; };
 		7692EE5D256FFC00000D8DDF /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE5C256FFC00000D8DDF /* Delegate.swift */; };
 		7692EE5F256FFEB2000D8DDF /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692EE5E256FFEB2000D8DDF /* ViewControllerDelegate.swift */; };
+		7696D8F9258CA20C00A0AAC5 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696D8F8258CA20C00A0AAC5 /* ChangePasswordViewController.swift */; };
 		769A9A09256CD8EB00F6C11F /* CustomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A9A08256CD8EB00F6C11F /* CustomTabViewController.swift */; };
 		76A00FB1256D76E800BEB9C5 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A00FB0256D76E800BEB9C5 /* ColorUtil.swift */; };
 		76EC8C1B2570272500C95113 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC8C1A2570272500C95113 /* TransactionDetailViewController.swift */; };
@@ -80,14 +83,17 @@
 		760FEDB22566286E00757FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761D466D2566D95100C24BB3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7623CB222570BE3700E2C7D3 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		762D70E8258B83EC00222B00 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		764A27D9256E323F00B5B0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		765259C8258BD1AA001CEC51 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		767296E725668194000BDAE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		767296E9256688A8000BDAE0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		768E922A257157CB00A397A0 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		7692EE57256FFAB1000D8DDF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		7692EE5C256FFC00000D8DDF /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		7692EE5E256FFEB2000D8DDF /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
+		7696D8F8258CA20C00A0AAC5 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		769A9A08256CD8EB00F6C11F /* CustomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewController.swift; sourceTree = "<group>"; };
 		76A00FB0256D76E800BEB9C5 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		76EC8C1A2570272500C95113 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 				76A00FB0256D76E800BEB9C5 /* ColorUtil.swift */,
 				769A9A08256CD8EB00F6C11F /* CustomTabViewController.swift */,
 				76FA9E71256E59A000EA88C5 /* UIUtil.swift */,
+				765259C8258BD1AA001CEC51 /* Tools.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -235,6 +242,8 @@
 				764EBD012567DD0E00EDA2D6 /* AddTransactionViewController.swift */,
 				76EC8C1A2570272500C95113 /* TransactionDetailViewController.swift */,
 				7623CB222570BE3700E2C7D3 /* TransactionViewController.swift */,
+				762D70E8258B83EC00222B00 /* EditProfileViewController.swift */,
+				7696D8F8258CA20C00A0AAC5 /* ChangePasswordViewController.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -546,8 +555,11 @@
 				767296EA256688A8000BDAE0 /* RegisterViewController.swift in Sources */,
 				761D466E2566D95100C24BB3 /* Constants.swift in Sources */,
 				760089042567792E0074EE4C /* WalletViewController.swift in Sources */,
+				762D70E9258B83EC00222B00 /* EditProfileViewController.swift in Sources */,
 				7692EE5D256FFC00000D8DDF /* Delegate.swift in Sources */,
+				7696D8F9258CA20C00A0AAC5 /* ChangePasswordViewController.swift in Sources */,
 				760FED8E2566286600757FA4 /* SceneDelegate.swift in Sources */,
+				765259C9258BD1AA001CEC51 /* Tools.swift in Sources */,
 				769A9A09256CD8EB00F6C11F /* CustomTabViewController.swift in Sources */,
 				764EBD022567DD0E00EDA2D6 /* AddTransactionViewController.swift in Sources */,
 				768E922B257157CB00A397A0 /* Transaction.swift in Sources */,
