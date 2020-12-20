@@ -54,7 +54,7 @@ class DataSource: NSObject,UITableViewDataSource {
         else{
             filteredData.removeAll()
             for transaction in arrTransaction {
-                if transaction.name.contains(keyword.lowercased()){
+                if transaction.name.lowercased().contains(keyword.lowercased()){
                     filteredData.append(transaction)
                 }
             }
